@@ -10,6 +10,8 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @categories = Article.find_by_id(params[:id]).categories
+    @images = Article.find_by_id(params[:id]).images
   end
 
   # GET /articles/new

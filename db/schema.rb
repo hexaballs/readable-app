@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20141113125057) do
     t.integer "category_id"
   end
 
+  add_index "articles_categories", ["article_id", "category_id"], name: "index_articles_categories_on_article_id_and_category_id"
+
   create_table "categories", force: true do |t|
     t.string   "category_name"
     t.datetime "created_at"

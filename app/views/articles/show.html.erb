@@ -1,34 +1,65 @@
-<p id="notice"><%= notice %></p>
+<% publisher = @article.link_identifier[/[a-z]{1,}\Wcom/] %>
+<div class="<%=publisher[/^[a-z]{1,}/]%> container">
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Author:</strong>
-  <%= @article.author %>
-</p>
+  <div class="row">
+    <div class="headline">
+      <% @categories.each do |category| %>
+      <div class="col-xs-3 source"><%= link_to publisher[/^[a-z]{1,}/].upcase, @article.link_identifier, :target => "_blank" %></div>
+      <div class="col-xs-6 logo"><i class="fa fa-newspaper-o fa-1x"></i> READABLE</div>
+      <div class="col-xs-3 category"><%= category.category_name.upcase %></div>
+      <% end %>
+    </div>
+  </div>
 
-<p>
-  <strong>Pub date:</strong>
-  <%= @article.pub_date %>
-</p>
+  <div class="row ">
+    <div class="col-sx-12">
+      <div class="jumbotron main-img-url">
+        <div class="img-title">
+          <h1><%= @article.title %></h1>
+          <%= image_tag @article.main_img_url %>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Link identifier:</strong>
-  <%= @article.link_identifier %>
-</p>
 
-<p>
-  <strong>Main img url:</strong>
-  <%= @article.main_img_url %>
-</p>
+  <div class="row content">
+    <p>
+      <strong>Author:</strong>
+      <%= @article.author %>
+    </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @article.content %>
-</p>
+    <p>
+      <strong>Pub date:</strong>
+      <%= @article.pub_date %>
+    </p>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+    <p>
+      <strong>Link identifier:</strong>
+      <%= @article.link_identifier %>
+    </p>
+
+    <p>
+      <strong>Main img url:</strong>
+      <%= @article.main_img_url %>
+    </p>
+
+    <p>
+      <strong>Content:</strong>
+      <%= raw @article.content %>
+    </p>
+
+    <% @images.each do |image| %>
+      <%= image_tag image.sub_img_url %>
+    <% end %>
+  </div>
+
+  <br />
+
+  <%= link_to 'Edit', edit_article_path(@article) %> |
+  <%= link_to 'Back', articles_path %>
+</div>
+
+

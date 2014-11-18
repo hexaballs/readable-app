@@ -1,8 +1,14 @@
 class CreateArticlesCategoriesJoinTable < ActiveRecord::Migration
-  def change
+  def self.up
     create_table :articles_categories, id: false do |t|
-      t.belongs_to :article
-      t.belongs_to :category
+      t.integer :article_id
+      t.integer :category_id
     end
+
+    add_index :articles_categories, [:article_id, :category_id]
+  end
+
+  def self.down
+    drop_table :articles_categories
   end
 end

@@ -28,6 +28,10 @@ gem 'spring',        group: :development
 
 gem 'angularjs-rails'
 
+gem 'nokogiri'
+
+gem 'watir-webdriver'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

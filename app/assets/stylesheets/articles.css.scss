@@ -1,3 +1,60 @@
-// Place all the styles related to the Articles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.qz {
+  .headline {
+    div:first-child {
+      text-align: left;
+      font-family: "Raleway", Arial, San-serif;
+      font-size: 2vw;
+      padding-top: 1em;
+      padding-bottom: 0.9em;
+    }
+    div:nth-child(2) {
+      text-align: center;
+      font-family: 'Raleway', sans-serif;
+      font-size: 3.8vw;
+      padding-top: 0.2em;
+    }
+    div:last-child {
+      text-align: right;
+      font-size: 2vw;
+      font-family: 'Raleway', sans-serif;
+      padding-top: 1em;
+      padding-bottom: 0.9em;
+    }
+    div {
+      margin: 0px;
+      font-weight: bold;
+      border-top: 1px solid #e2e2e2;
+    }
+  }
+  .row{
+    margin-top: 15px;
+    .main-img-url {
+      padding: 0px !important;
+      .img-title {
+        position: relative;
+        h1 {
+          position: absolute;
+          z-index: 50;
+          color: #e6e6e6;
+          text-shadow: -7px 5px 0px black;
+          background-color: rgba(255, 255, 255, 0.3);
+          font-family: "Roboto";
+          font-weight: bold;
+          font-size: 4vw;
+          text-align: center;
+          bottom: 5%;
+          margin-bottom: 25px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+        img {
+          width: 100%;
+          z-index: 0;
+        }
+      }
+    }
+  }
+  .content {
+
+  }
+}
