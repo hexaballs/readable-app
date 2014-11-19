@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>READABLE</title>
+
+  <title>ReadableApp</title>
   <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css' %>
-  <%= stylesheet_link_tag 'application' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Raleway:500,900,200' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 </head>
 
 <body ng-app="myApp">
@@ -27,6 +32,7 @@
     </div>
   </nav>
 
+
   <%= video_tag "background.webm", :autobuffer => true, :autoplay => true, :loop => true, :poster => "background.png", :id => "bgvid" %>
 
 
@@ -47,7 +53,7 @@
 
 
 
-  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js' %>
 </body>
 </html>
