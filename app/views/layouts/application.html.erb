@@ -29,6 +29,7 @@
           <li><%= link_to "Home", root_path %></li>
         </ul>
       </div><!--/.nav-collapse -->
+
     </div>
   </nav>
 
@@ -36,16 +37,19 @@
   <%= video_tag "background.webm", :autobuffer => true, :autoplay => true, :loop => true, :poster => "background.png", :id => "bgvid" %>
 
 
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="col-xs-2"><h1>Title</h1></div>
-      <div class="col-xs-2"><h1>Title</h1></div>
-      <div class="col-xs-2"><h1>Title</h1></div>
-      <div class="col-xs-2"><h1>Title</h1></div>
-      <div class="col-xs-2"><h1>Title</h1></div>
-      <div class="col-xs-2"><h1>Title</h1></div>
+  <div class="landing-articles">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"><h1>Title</h1></div>
+        <div class="col-md-2"><h1>Title</h1></div>
+        <div class="col-md-2"><h1>Title</h1></div>
+        <div class="col-md-2"><h1>Title</h1></div>
+        <div class="col-md-2"><h1>Title</h1></div>
+        <div class="col-md-2"><h1>Title</h1></div>
+      </div>
     </div>
   </div>
+
 
 
     <%= yield %>
