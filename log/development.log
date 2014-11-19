@@ -22757,3 +22757,154 @@ Started GET "/assets/articles.js?body=1" for 127.0.0.1 at 2014-11-19 00:19:45 +0
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 00:19:45 +0800
+
+
+Started GET "/articles/12" for 127.0.0.1 at 2014-11-19 10:14:57 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mArticle Load (2.1ms)[0m  [1mSELECT  "articles".* FROM "articles"  WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mArticle Load (0.6ms)[0m  SELECT  "articles".* FROM "articles"  WHERE "articles"."id" = 12 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "articles".* FROM "articles"  WHERE "articles"."id" = 12 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "articles_categories" ON "categories"."id" = "articles_categories"."category_id" WHERE "articles_categories"."article_id" = ?  [["article_id", 12]]
+  Rendered articles/show.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 175ms (Views: 148.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/articles.css?body=1" for 127.0.0.1 at 2014-11-19 10:14:57 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 10:14:57 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-19 10:14:57 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 10:14:57 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-19 10:14:57 +0800
+
+
+Started GET "/assets/articles.js?body=1" for 127.0.0.1 at 2014-11-19 10:14:57 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 10:14:57 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 10:14:57 +0800
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2014-11-19 10:15:10 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles"  WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles"  WHERE "articles"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "articles".* FROM "articles"  WHERE "articles"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "articles_categories" ON "categories"."id" = "articles_categories"."category_id" WHERE "articles_categories"."article_id" = ?  [["article_id", 1]]
+  Rendered articles/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 50ms (Views: 47.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/articles.css?body=1" for 127.0.0.1 at 2014-11-19 10:15:10 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-19 10:15:10 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 10:15:10 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 10:15:10 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 10:15:10 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-19 10:15:10 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 10:15:10 +0800
+
+
+Started GET "/assets/articles.js?body=1" for 127.0.0.1 at 2014-11-19 10:15:10 +0800
+
+
+Started GET "/articles/11" for 127.0.0.1 at 2014-11-19 10:15:46 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles"  WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mArticle Load (0.3ms)[0m  SELECT  "articles".* FROM "articles"  WHERE "articles"."id" = 11 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "articles".* FROM "articles"  WHERE "articles"."id" = 11 LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "articles_categories" ON "categories"."id" = "articles_categories"."category_id" WHERE "articles_categories"."article_id" = ?  [["article_id", 11]]
+  Rendered articles/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 39ms (Views: 36.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/11" for 127.0.0.1 at 2014-11-19 10:15:46 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles"  WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles"  WHERE "articles"."id" = 11 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "articles".* FROM "articles"  WHERE "articles"."id" = 11 LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "articles_categories" ON "categories"."id" = "articles_categories"."category_id" WHERE "articles_categories"."article_id" = ?  [["article_id", 11]]
+  Rendered articles/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 71ms (Views: 67.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/articles.css?body=1" for 127.0.0.1 at 2014-11-19 10:15:47 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-19 10:15:47 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 10:15:47 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 10:15:47 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 10:15:47 +0800
+
+
+Started GET "/assets/articles.js?body=1" for 127.0.0.1 at 2014-11-19 10:15:47 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-19 10:15:47 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 10:15:47 +0800
+
+
+Started GET "/articles/14" for 127.0.0.1 at 2014-11-19 10:24:33 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT  "articles".* FROM "articles"  WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 14]]
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles"  WHERE "articles"."id" = 14 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "articles".* FROM "articles"  WHERE "articles"."id" = 14 LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "articles_categories" ON "categories"."id" = "articles_categories"."category_id" WHERE "articles_categories"."article_id" = ?  [["article_id", 14]]
+  Rendered articles/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 47ms (Views: 44.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-19 10:24:33 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 10:24:33 +0800
+
+
+Started GET "/assets/articles.css?body=1" for 127.0.0.1 at 2014-11-19 10:24:33 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 10:24:33 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 10:24:33 +0800
+
+
+Started GET "/assets/articles.js?body=1" for 127.0.0.1 at 2014-11-19 10:24:33 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 10:24:33 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-19 10:24:33 +0800
