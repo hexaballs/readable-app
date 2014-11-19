@@ -3,18 +3,22 @@
 
   <p id="notice"><%= notice %></p>
 
+
   <div class="row">
-    <div class="headline">
-      <% @categories.each do |category| %>
-      <div class="col-xs-3 source"><%= link_to publisher[/^[a-z]{1,}/].upcase, @article.link_identifier, :target => "_blank" %></div>
-      <div class="col-xs-6 logo"><i class="fa fa-newspaper-o fa-1x"></i> READABLE</div>
-      <div class="col-xs-3 category"><%= category.category_name.upcase %></div>
-      <% end %>
-    </div>
+    <hr class="top-hr" />
+      <div class="headline">
+        <div class="col-xs-3 source"><%= link_to publisher[/^[a-z]{1,}/].upcase, @article.link_identifier, :target => "_blank" %></div>
+        <div class="col-xs-6 logo"><i class="fa fa-newspaper-o fa-1x"></i> READABLE</div>
+        <% @categories.each do |category| %>
+        <div class="col-xs-3 category"><%= category.category_name.upcase %></div>
+        <% end %>
+      </div>
   </div>
 
-  <div class="row ">
+
+  <div class="row">
     <div class="col-sx-12">
+      <hr class="bottom-hr" />
       <div class="jumbotron main-img-url">
         <div class="img-title">
           <h1><%= @article.title %></h1>
@@ -25,35 +29,45 @@
   </div>
 
 
+
   <div class="row content">
-    <p>
-      <strong>Author:</strong>
-      <%= @article.author %>
-    </p>
+    <div class="col-md-3 side-bar">
 
-    <p>
-      <strong>Pub date:</strong>
-      <%= @article.pub_date %>
-    </p>
+      <div class="social">
+        <i class="fa fa-facebook-square fa-3x"></i>
+        <i class="fa fa-twitter-square fa-3x"></i>
+        <i class="fa fa-pinterest-square fa-3x"></i>
+        <i class="fa fa-envelope fa-3x"></i>
+      </div>
 
-    <p>
-      <strong>Link identifier:</strong>
-      <%= @article.link_identifier %>
-    </p>
+      <div class="written-by">
+        <p><strong>WRITTEN BY</strong></p>
+        <p><%= @article.author %></p>
+      </div>
 
-    <p>
-      <strong>Main img url:</strong>
-      <%= @article.main_img_url %>
-    </p>
+      <div class="pub-date">
+        <p><strong>PUBLISHED DATE</strong></p>
+        <p><%= @article.pub_date.strftime("%A, %b %e %Y") %></p>
+      </div>
 
-    <p>
-      <strong>Content:</strong>
+      <div class="content-category">
+        <p><strong>CATEGORY</strong></p>
+        <% @categories.each do |category| %>
+        <p><%= category.category_name %></p>
+        <% end %>
+      </div>
+
+      <div class="source-link">
+        <p><strong><%= link_to "SOURCE", @article.link_identifier, :target => "_blank" %></strong></p>
+      </div>
+
+    </div>
+
+
+    <div class="col-md-9 main-content">
       <%= raw @article.content %>
-    </p>
+    </div>
 
-    <% @images.each do |image| %>
-      <%= image_tag image.sub_img_url %>
-    <% end %>
   </div>
 
   <br />
