@@ -9,9 +9,7 @@
       <div class="headline">
         <div class="col-xs-3 source"><%= link_to publisher[/^[a-z]{1,}/].upcase, @article.link_identifier, :target => "_blank" %></div>
         <div class="col-xs-6 logo"><i class="fa fa-newspaper-o fa-1x"></i> READABLE</div>
-        <% @categories.each do |category| %>
-        <div class="col-xs-3 category"><%= category.category_name.upcase %></div>
-        <% end %>
+        <div class="col-xs-3 category"><%= @categories.first.category_name.upcase %></div>
       </div>
   </div>
 
@@ -52,7 +50,7 @@
 
       <div class="content-category">
         <p><strong>CATEGORY</strong></p>
-        <% @categories.each do |category| %>
+        <% @categories.order("category_name ASC").each do |category| %>
         <p><%= category.category_name %></p>
         <% end %>
       </div>

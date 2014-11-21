@@ -14,7 +14,7 @@
       <th>Pub date</th>
       <th>Link identifier</th>
       <th>Main img url</th>
-      <th>Content</th>
+      <!-- <th>Content</th> -->
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,11 +24,17 @@
       <tr>
         <td><%= article.title %></td>
         <td><%= article.author %></td>
-        <td><%= article.categories.pluck(:category_name) %></td>
+        <td>
+          <ul>
+        <% article.categories.pluck(:category_name).each do |c| %>
+            <li><%= c %></li>
+        <% end %>
+          </ul>
+        </td>
         <td><%= article.pub_date %></td>
         <td><%= article.link_identifier %></td>
         <td><%= article.main_img_url %></td>
-        <td><%= article.content %></td>
+        <!-- <td><%= article.content %></td> -->
         <td><%= link_to 'Show', article %></td>
         <td><%= link_to 'Edit', edit_article_path(article) %></td>
         <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
