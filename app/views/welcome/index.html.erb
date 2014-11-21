@@ -20,18 +20,20 @@
   </nav>
 
 
-  <%= video_tag "background.webm", :autobuffer => true, :autoplay => true, :loop => true, :poster => "background.png", :id => "bgvid" %>
+  <div class="landing-container">
+    <%= video_tag "background.webm", :autobuffer => true, :autoplay => true, :loop => true, :poster => "background.png", :id => "bgvid" %>
 
 
-  <div class="landing-articles">
-    <div class="container">
-      <div class="row">
-        <% @article[0..2].each do |article| %>
-        <div class="col-md-4 readable-article">
-          <div class="landing-main-img-url"><%= image_tag article.main_img_url %></div>
-          <div class="landing-title"><h1><%= link_to article.title, article_path(article) %></h1></div>
+    <div class="landing-articles">
+      <div class="container articles-container">
+        <div class="row articles-container">
+          <% @article[0..11].each do |article| %>
+          <div class="col-md-4 readable-article">
+            <div class="landing-main-img-url"><%= image_tag article.main_img_url %></div>
+            <div class="landing-title"><h1><%= link_to article.title, article_path(article) %></h1></div>
+          </div>
+          <% end %>
         </div>
-        <% end %>
       </div>
     </div>
   </div>
