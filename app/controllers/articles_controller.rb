@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
+    @categories = Category.all
   end
 
   # GET /articles/1
@@ -28,6 +29,8 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
 
+    @article.categories  << Category.find(params[:article][:categories])
+
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
@@ -42,6 +45,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
+
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
@@ -71,6 +75,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :author, :pub_date, :link_identifier, :main_img_url, :content)
+      params.require(:article).permit(:title, :author, :pub_date, :link_identifier, :main_img_url, :content, :category_ids => [])
     end
 end
