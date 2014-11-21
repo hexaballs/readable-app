@@ -55,6 +55,8 @@ group :development do
 
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+
+  gem 'seed_dump'
 end
 
 group :development, :test do
