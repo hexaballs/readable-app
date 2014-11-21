@@ -21,7 +21,7 @@
   </div>
     <div class="field">
     <%= f.label :category %><br>
-    <%= f.collection_select(:category_ids, Category.all, :id, :category_name, {:include_hidden => false}, {:multiple =>true})%>
+    <%= f.collection_select(:category_ids, Category.all.order("category_name ASC"), :id, :category_name, {:include_hidden => false}, {:multiple =>true})%>
 
   </div>
   <div class="field">

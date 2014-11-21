@@ -8,7 +8,7 @@
     <hr class="top-hr" />
       <div class="headline">
         <div class="col-xs-3 source"><%= link_to publisher[/^[a-z]{1,}/].upcase, @article.link_identifier, :target => "_blank" %></div>
-        <div class="col-xs-6 logo"><i class="fa fa-newspaper-o fa-1x"></i> READABLE</div>
+        <div class="col-xs-6 logo"><%= link_to(raw("<i class='fa fa-newspaper-o fa-1x'></i> READABLE"), root_url) %></div>
         <div class="col-xs-3 category"><%= @categories.first.category_name.upcase %></div>
       </div>
   </div>
