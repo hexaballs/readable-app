@@ -10,6 +10,7 @@
     <tr>
       <th>Title</th>
       <th>Author</th>
+      <th>Category</th>
       <th>Pub date</th>
       <th>Link identifier</th>
       <th>Main img url</th>
@@ -23,6 +24,7 @@
       <tr>
         <td><%= article.title %></td>
         <td><%= article.author %></td>
+        <td><%= article.categories.pluck(:category_name) %></td>
         <td><%= article.pub_date %></td>
         <td><%= article.link_identifier %></td>
         <td><%= article.main_img_url %></td>
