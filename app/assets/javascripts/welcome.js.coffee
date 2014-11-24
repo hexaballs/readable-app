@@ -13,3 +13,5 @@ App.controller("ArticleCtrl", ["$scope", "$http", ($scope, $http) ->
     .success (data) ->
       $scope.categories = data
 ])
+
+
