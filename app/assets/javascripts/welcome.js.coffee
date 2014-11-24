@@ -14,4 +14,8 @@ App.controller("ArticleCtrl", ["$scope", "$http", ($scope, $http) ->
       $scope.categories = data
 ])
 
-
+App.controller("UserCtrl", ["$scope", "$http", ($scope, $http) ->
+  $http.get('/categories.json')
+    .success (data) ->
+      $scope.categories = data
+])
