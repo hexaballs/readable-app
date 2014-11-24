@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
+
+#use postgresql for production
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -51,9 +54,6 @@ group :development do
   #> https://github.com/rweng/pry-rails
   gem 'pry-rails'
 
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
-
   gem 'seed_dump'
 end
 
@@ -63,8 +63,6 @@ group :development, :test do
 end
 
 group :production do
-  #use postgresql for production
-  gem 'pg'
   gem 'rails_12factor'
 end
 

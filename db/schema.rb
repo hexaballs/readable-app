@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141113125057) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "articles", force: true do |t|
     t.string   "title"
     t.string   "author"
@@ -29,7 +32,7 @@ ActiveRecord::Schema.define(version: 20141113125057) do
     t.integer "category_id"
   end
 
-  add_index "articles_categories", ["article_id", "category_id"], name: "index_articles_categories_on_article_id_and_category_id"
+  add_index "articles_categories", ["article_id", "category_id"], name: "index_articles_categories_on_article_id_and_category_id", using: :btree
 
   create_table "categories", force: true do |t|
     t.string   "category_name"
