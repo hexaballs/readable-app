@@ -9,6 +9,11 @@
 //   padding: 0px;
 // }
 
+body, html {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
 .landing-container {
   overflow: hidden;
   max-height: 690px;
@@ -33,7 +38,7 @@ video#bgvid {
 .input-bar {
   position: relative;
   z-index: 10;
-  margin-top: -670px;
+  margin-top: -630px;
   input {
     height: 40px;
     -webkit-transition: all 0.30s ease-in-out;
@@ -54,8 +59,10 @@ video#bgvid {
     border: 1px solid rgba(81, 203, 238, 1);
     border-radius: 20px;
   }
-  select {
-
+  .category-select {
+    width: 150px;
+    float: left;
+    margin-right: 5px;
   }
 }
 
@@ -64,7 +71,7 @@ video#bgvid {
   overflow-y: scroll;
   width: 1199px;
   height: 390px;
-  top: 25%;
+  top: 260px;
   margin-left: 3%;
   margin-right: 3%;
   background-color: rgba(250, 250, 250, 0.35);
@@ -83,6 +90,9 @@ video#bgvid {
     height: 320px;
     border-radius: 20px;
     box-shadow: 10px 10px 15px 0px rgba(30,30,30,0.8);
+    .category-pills {
+      margin: 5px;
+    }
     .landing-main-img-url {
       position: relative;
       width: 90%;
@@ -100,6 +110,7 @@ video#bgvid {
     }
     .landing-title {
       margin-top: -30px;
+      margin-bottom: 10px;
       position: relative;
       z-index: 5;
       width: 85%;

@@ -25,9 +25,19 @@
       <div class="row input-bar">
         <div class="col-xs-6 col-xs-offset-3">
           <input type="text" ng-model="search" class="col-xs-6" placeholder="Search">
-          <select class="col-xs-3" ng-model="category">
-            <option ng-repeat="category in categories" value="{{category.category_name}}">{{category.category_name}}</option>
-          </select>
+          <div class="category-select">
+            <select class="form-control" ng-model="category">
+              <option value>--- All ---</option>
+              <option ng-repeat="category in categories" value="{{category.category_name}}">{{category.category_name}}</option>
+            </select>
+          </div>
+
+          <button type="button" class="btn btn-info btn-md" ng-click="showMyArticles()">
+            <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span> My Categories
+          </button>
+          <button type="button" class="btn btn-primary btn-md" ng-click="showAllArticles()">
+            <span class="glyphicon glyphicon-record" aria-hidden="true"></span> Show All
+          </button>
         </div>
       </div>
     </div>
@@ -35,9 +45,10 @@
     <div class="landing-articles">
       <div class="container articles-container">
         <div class="row articles-container">
-          <div class="col-xs-4 readable-article" ng-repeat="article in articles | filter: search | filter: { categories: category }">
+          <div class="col-xs-4 readable-article" ng-repeat="article in articles | filter: search | filter: { categories:category||undefined }">
             <div class="landing-main-img-url"><img ng-src="{{article.main_img_url}}" alt="{{article.title}}"></div>
             <div class="landing-title"><h1><a href="/articles/{{article.id}}">{{article.title}}</a></h1></div>
+            <span class="label label-warning category-pills" ng-repeat="category in article.categories">{{category.category_name}}</span>
           </div>
         </div>
       </div>
