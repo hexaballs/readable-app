@@ -1,6 +1,9 @@
 .category-container {
   border: 1px solid black;
+  text-align: center;
   .category-name {
     height: 50px;
+    margin: 20px;
+    display: inline-block;
   }
 }

@@ -1,0 +1,39 @@
+<div ng-controller="UserCtrl" class="container">
+  <h1>User Preference</h1>
+
+  <%= image_tag current_user.image %>
+  <%= current_user.name %>
+
+  <div class="row">
+    <div class="col-xs-2 col-xs-offset-10">
+      <button type="button" class="btn btn-default" aria-label="Left Align">
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+        Save Selection
+      </button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6 category-container">
+      <h3>All Categories</h3>
+      <div ng-repeat="category in allCategories" class="category-name checkbox">
+        <button type="button" class="btn btn-default" aria-label="Left Align" ng-click="addCategory(category, $index)">
+          <div>{{category.category_name}}</div>
+          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="col-xs-6 category-container">
+      <h3>Selected Categories</h3>
+      <div ng-repeat="category in userCategories" class="category-name checkbox">
+        <button type="button" class="btn btn-default" aria-label="Left Align" ng-click="removeCategory(category, $index)">
+          <div>{{category.category_name}}</div>
+          <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
