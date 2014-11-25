@@ -9,15 +9,20 @@
 //   padding: 0px;
 // }
 
-body, html {
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
 
 .landing-container {
   overflow: hidden;
-  max-height: 690px;
+  max-height: 681px;
   // position: static;
+}
+
+.video-wrapper {
+  width: 1273px;
+  height: 716px;
+  z-index: 1;
+  top: -716px;
+  background-color: rgba(0, 0, 0, 0.3);
+  position:relative;
 }
 
 video#bgvid {
@@ -37,8 +42,8 @@ video#bgvid {
 
 .input-bar {
   position: relative;
-  z-index: 10;
-  margin-top: -630px;
+  z-index: 50;
+  margin-top: -1370px;
   input {
     height: 40px;
     -webkit-transition: all 0.30s ease-in-out;
@@ -79,6 +84,7 @@ video#bgvid {
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 20px;
+  z-index: 30;
   .readable-article {
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
