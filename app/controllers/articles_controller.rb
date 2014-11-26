@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
     @articles = Article.all
     @categories = Category.all
     if params[:category]
-      @articles = Article.includes(:categories).where("categories.category_name" => params[:category])
+      @articles = Article.joins(:categories).where("categories.category_name" => params[:category])
     end
   end
 
