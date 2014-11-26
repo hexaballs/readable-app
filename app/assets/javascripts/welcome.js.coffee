@@ -22,6 +22,12 @@ App.controller("ArticleCtrl", ["$scope", "$http", ($scope, $http) ->
     $http.get('/articles.json')
       .success (data) ->
         $scope.articles = data
+
+  $scope.pillFilter = (category) ->
+    console.log category
+    $http.get('/articles.json?category=' + category)
+      .success (data) ->
+        $scope.articles = data
 ])
 
 App.controller("UserCtrl", ["$scope", "$http", "$timeout", ($scope, $http, $timeout) ->

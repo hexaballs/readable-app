@@ -6,6 +6,9 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all
     @categories = Category.all
+    if params[:category]
+      @articles = Article.includes(:categories).where("categories.category_name" => params[:category])
+    end
   end
 
   # GET /articles/1

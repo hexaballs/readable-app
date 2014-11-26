@@ -27,7 +27,7 @@
         <div class="col-xs-6 col-xs-offset-3">
           <input type="text" ng-model="search" class="col-xs-6" placeholder="Search">
           <div class="category-select">
-            <select class="form-control" ng-model="category">
+            <select class="form-control btn btn-success" ng-model="category">
               <option value>--- All ---</option>
               <option ng-repeat="category in categories" value="{{category.category_name}}">{{category.category_name}}</option>
             </select>
@@ -49,7 +49,7 @@
           <div class="col-xs-4 readable-article" ng-repeat="article in articles | filter: search | filter: { categories:category||undefined }">
             <div class="landing-main-img-url"><img ng-src="{{article.main_img_url}}" alt="{{article.title}}"></div>
             <div class="landing-title"><h1><a href="/articles/{{article.id}}">{{article.title}}</a></h1></div>
-            <span class="label label-warning category-pills" ng-repeat="category in article.categories">{{category.category_name}}</span>
+            <span class="label label-warning category-pills" ng-repeat="category in article.categories" ng-click="pillFilter(category.category_name)">{{category.category_name}}</span>
           </div>
         </div>
       </div>
