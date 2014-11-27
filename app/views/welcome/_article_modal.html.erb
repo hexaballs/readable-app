@@ -1,0 +1,62 @@
+<div class="modal fade bs-article-view" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content container">
+
+      <div class="modal-header">
+        <div class="row">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+          <div class="img-title modal-title">
+            <h4>{{article.title}}</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="img-title">
+          <img src="{{article.main_img_url}}" alt="{{article.link_identifier}}"></img>
+        </div>
+
+        <div class="row content">
+          <div class="col-xs-2 side-bar">
+
+            <div class="social">
+              <i class="fa fa-facebook-square fa-2x"></i>
+              <i class="fa fa-twitter-square fa-2x"></i>
+              <i class="fa fa-pinterest-square fa-2x"></i>
+              <i class="fa fa-envelope fa-2x"></i>
+            </div>
+
+            <div class="written-by">
+              <p><strong>WRITTEN BY</strong></p>
+              <p>{{article.author}}</p>
+            </div>
+
+            <div class="pub-date">
+              <p><strong>PUBLISHED DATE</strong></p>
+              <p>{{article.pub_date}}</p>
+            </div>
+
+            <div class="content-category">
+              <p><strong>CATEGORY</strong></p>
+              <p ng-repeat="category in article.categories">{{category}}</p>
+            </div>
+
+            <div class="source-link">
+              <p><strong><a href="{{article.link_identifier}}" target ="_blank">Source</a></strong></p>
+            </div>
+
+          </div>
+
+          <div class="col-xs-10">
+            <div class="main-content" ng-bind-html="article.content">
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

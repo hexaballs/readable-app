@@ -2,10 +2,11 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-App = angular.module("readableApp", [])
+App = angular.module("readableApp", ["ngSanitize"])
 
 App.controller("ArticleCtrl", ["$scope", "$http", "$timeout", ($scope, $http, $timeout) ->
 
+  $scope.userLoggedIn = true
   $http.get('/user/is_logged_in.json')
     .success (data) ->
       $scope.userLoggedIn = data.is_logged_in
@@ -69,4 +70,9 @@ App.controller("ArticleCtrl", ["$scope", "$http", "$timeout", ($scope, $http, $t
       .success (data) ->
         $scope.articles = data
 
+  $scope.articleView = (articleId) ->
+    $http.get('/articles/' + articleId + '.json')
+      .success (data) ->
+        $scope.article = data
+        console.log data
 ])
