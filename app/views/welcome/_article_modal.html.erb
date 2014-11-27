@@ -38,7 +38,8 @@
 
             <div class="content-category">
               <p><strong>CATEGORY</strong></p>
-              <p ng-repeat="category in article.categories">{{category}}</p>
+
+              <p ng-repeat="category in article.categories">{{category.category_name}}</p>
             </div>
 
             <div class="source-link">
@@ -47,7 +48,7 @@
 
           </div>
 
-          <div class="col-xs-10">
+          <div class="col-xs-10 {{articleClass}}">
             <div class="main-content" ng-bind-html="article.content">
 
             </div>

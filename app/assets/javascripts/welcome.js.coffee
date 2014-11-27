@@ -74,5 +74,5 @@ App.controller("ArticleCtrl", ["$scope", "$http", "$timeout", ($scope, $http, $t
     $http.get('/articles/' + articleId + '.json')
       .success (data) ->
         $scope.article = data
-        console.log data
+        $scope.articleClass = data.link_identifier.replace(/\W/g, '-').match(/[a-z]{1,}\Wcom/)[0]
 ])

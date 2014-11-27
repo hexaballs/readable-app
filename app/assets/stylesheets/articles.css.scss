@@ -2,36 +2,77 @@
 div.inline-image-tools, div.short-url, div.share-buttons.colored, div.count.number, div.inline-ad.ad-visible, p.print, .buzz_superlist_item_text hr, div.buzz-topic-links, div.share-box.bf_dom, div.buzz_superlist_item.buzz_superlist_item_embed.buzz_superlist_item_narrow.no_caption, #superlist_3479104_4033774, #superlist_3479104_4033787 {
   display: none;
 }
-// individualised styling for main content
 
-.qz {
+// article modal styling
+.modal-header{
+  .img-title {
+    h4 {
+      color: #EEEEEE;
+      text-shadow: -3px 3px 0px black;
+      background-color: rgba(53, 53, 53, 0.4);
+      font-family: "Roboto";
+      font-weight: bold;
+      font-size: 40px;
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 100%;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+body .modal-content {
+  /* new custom width */
+  width: 980px;
+}
+
+body .modal-lg {
+  width: 980px;
+}
+
+.modal-body{
+  .img-title{
+    img {
+      width: 100%;
+      position: relative;
+    }
+  }
+  .content {
+    margin-top: 20px;
+  }
+}
+
+
+.qz-com {
   .main-content {
     p.annotatable {
       font-family: "Roboto";
       font-weight: 300;
-      font-size: 22px;
+      font-size: 18px;
       line-height: 35px;
-      margin-bottom: 30px;
+      margin-bottom: 18px;
     }
     img {
       width: 100%;
     }
     p.annotatable > em {
-      font-size: 20px;
+      font-size: 16px;
     }
     figcaption.inline-image-caption {
       font-family: "Roboto";
-      margin-bottom: 30px;
+      margin-bottom: 18px;
     }
     .inline-image.size-large {
-      min-width: 800px;
-      margin-left: -180px;
+      min-width: 0px;
+      margin-left: 0px;
     }
     .pull-quote {
       float: left;
-      width: 500px!important;
+      width: 400px!important;
       position: relative;
-      margin-left: -250px!important;
+      margin-left: -150px!important;
       height: auto;
       min-height: 108px;
       top: 10px;
@@ -58,7 +99,7 @@ div.inline-image-tools, div.short-url, div.share-buttons.colored, div.count.numb
     .item-body dl, .item-body ol li, .item-body ul li {
       font-family: "Roboto";
       font-weight: 300;
-      font-size: 22px;
+      font-size: 18px;
       line-height: 35px;
       margin-bottom: 30px;
     }
@@ -66,7 +107,7 @@ div.inline-image-tools, div.short-url, div.share-buttons.colored, div.count.numb
       margin: 19px 0 17px;
       font-family: "Roboto";
       font-weight: 700;
-      font-size: 25px;
+      font-size: 22px;
     }
 
     .item-body h3 {
@@ -78,18 +119,18 @@ div.inline-image-tools, div.short-url, div.share-buttons.colored, div.count.numb
   }
 }
 
-.buzzfeed {
+.buzzfeed-com {
   .main-content {
     .buzz_superlist_item_text p {
       font-family: "Roboto";
       font-weight: 300;
-      font-size: 22px;
+      font-size: 18px;
       line-height: 35px;
       margin-bottom: 30px;
     }
-    #buzz_sub_buzz.suplist_long .buzz_superlist_item_left_small, #buzz_sub_buzz.suplist_long .buzz_superlist_item_left_large {
+    .suplist_long .buzz_superlist_item_left_small, .suplist_long .buzz_superlist_item_left_large {
       float: left;
-      margin: 20px 20px 20px -215px;
+      margin: 5px 5px 5px -120px;
       padding: 10px 0 0 0;
     }
     p.article_caption_w_attr {
@@ -99,35 +140,72 @@ div.inline-image-tools, div.short-url, div.share-buttons.colored, div.count.numb
       line-height: 17px;
       clear: both;
     }
-    #buzz_sub_buzz.suplist_long .buzz_superlist_item_right_small, #buzz_sub_buzz.suplist_long .buzz_superlist_item_right_large {
+    .suplist_long .buzz_superlist_item_right_small, .suplist_long .buzz_superlist_item_right_large {
       float: right;
-      margin: 20px -15px 20px 20px;
+      margin: 5px -15px 5px 5px;
       padding: 10px 0 0 0;
     }
-    #buzz_sub_buzz.suplist_long .buzz_superlist_item_right_large,  #buzz_sub_buzz.suplist_long .buzz_superlist_item_left_large, #buzz_sub_buzz.suplist_long .buzz_superlist_item_right_large img, #buzz_sub_buzz.suplist_long .buzz_superlist_item_left_large img {
+    .suplist_long .buzz_superlist_item_right_large,  .suplist_long .buzz_superlist_item_left_large, .suplist_long .buzz_superlist_item_right_large img, .suplist_long .buzz_superlist_item_left_large img {
       max-width: 440px;
     }
-    #buzz_sub_buzz.suplist_long .buzz_superlist_item_right_small, #buzz_sub_buzz.suplist_long .buzz_superlist_item_left_small, #buzz_sub_buzz.suplist_long .buzz_superlist_item_right_small img, #buzz_sub_buzz.suplist_long .buzz_superlist_item_left_small img {
+    .suplist_long .buzz_superlist_item_right_small, .suplist_long .buzz_superlist_item_left_small, .suplist_long .buzz_superlist_item_right_small img, .suplist_long .buzz_superlist_item_left_small img {
       max-width: 300px;
     }
-    #buzz_sub_buzz.suplist_long .buzz_superlist_item_wide {
-      width: 990px;
-      max-width: 990px;
-      margin: 38px 0 50px -150px;
+    .suplist_long .buzz_superlist_item_wide {
+      width: 900px;
+      max-width: 900px;
+      margin: 28px 0 20px 0px;
       padding: 0px;
     }
-    #buzz_sub_buzz.suplist_long .buzz_superlist_item_wide.image_lffw .sub_buzz_content img, .longform_custom_header_image .sub_buzz_content img {
+    .suplist_long .buzz_superlist_item_wide.image_lffw .sub_buzz_content img, .longform_custom_header_image .sub_buzz_content img {
       height: auto;
       width: 100%;
     }
     .buzz_superlist_item.buzz_superlist_item_image.buzz_superlist_item_wide.image_lffw.no_caption.been_bled.image_lffw_bled {
       .sub_buzz_content {
         margin-left: -125px !important;
-        width: 1100px !important;
-        max-width: 1100px !important;
+        width: 900px !important;
+        max-width: 900px !important;
         height: auto !important;
       }
     }
-
+    .buzz_superlist_item.buzz_superlist_item_image.buzz_superlist_item_wide {
+      width: 900px;
+      max-width: 900px;
+      margin: 28px 0 20px -148px;
+      padding: 0px;
+      .sub_buzz_content {
+        padding: 0 0 3px 0;
+        position: relative;
+        line-height: 0;
+        img {
+          display: block;
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
+    .buzz_superlist_item.buzz_superlist_item_image.buzz_superlist_item_wide.image_lffw.no_caption.been_bled.image_lffw_bled{
+      width: 900px;
+      max-width: 900px;
+      margin: 28px 0 20px -23px;
+      padding: 0px;
+    }
+    .buzz_superlist_item.buzz_superlist_item_image.buzz_superlist_item_left_small.image_lfls {
+      max-width: 300px;
+      border: none;
+      padding: 18px 0;
+      clear: both;
+      position: relative;
+      margin: 0;
+      float: left;
+      .sub_buzz_content{
+        img {
+          max-width: 300px;
+          display: block;
+          height: auto;
+        }
+      }
+    }
   }
 }
