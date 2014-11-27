@@ -75,4 +75,16 @@ App.controller("ArticleCtrl", ["$scope", "$http", "$timeout", ($scope, $http, $t
       .success (data) ->
         $scope.article = data
         $scope.articleClass = data.link_identifier.replace(/\W/g, '-').match(/[a-z]{1,}\Wcom/)[0]
+        $('.bs-article-view').modal('show');
+
+  checkHash = ->
+    if window.location.hash.indexOf('#/articles/') == 0
+      $scope.articleId = window.location.hash.substring(10)
+      $scope.articleView($scope.articleId)
+
+  window.addEventListener("hashchange", checkHash, false)
+
+  if not $('.bs-article-view').is(':visible')
+    checkHash()
+
 ])
