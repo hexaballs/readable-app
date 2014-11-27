@@ -34,4 +34,8 @@ class UserController < ApplicationController
     @user_articles = user_articles.uniq
   end
 
+  def is_logged_in
+    render json: {is_logged_in: (not current_user.nil?)}
+  end
+
 end

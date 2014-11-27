@@ -16,6 +16,7 @@ class ArticlesController < ApplicationController
   def show
     @categories = Article.find_by_id(params[:id]).categories
     @images = Article.find_by_id(params[:id]).images
+    render 'show', layout: 'article'
   end
 
   # GET /articles/new

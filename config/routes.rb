@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post 'user/submit' => 'user#submit'
   get 'user/user_category' => 'user#user_category'
   get 'user/user_all_category' => 'user#user_all_category'
+  get 'user/is_logged_in' => 'user#is_logged_in'
   get 'user/articles' => 'user#articles'
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]

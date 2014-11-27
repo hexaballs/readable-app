@@ -4,19 +4,26 @@
 
 App = angular.module("readableApp", [])
 
-App.controller("ArticleCtrl", ["$scope", "$http", ($scope, $http) ->
-  $http.get('/articles.json')
+App.controller("ArticleCtrl", ["$scope", "$http", "$timeout", ($scope, $http, $timeout) ->
+
+  $http.get('/user/is_logged_in.json')
+    .success (data) ->
+      $scope.userLoggedIn = data.is_logged_in
+
+  $http.get('/user/articles.json')
     .success (data) ->
       $scope.articles = data
 
-  $http.get('/categories.json')
+  $http.get('/articles.json')
     .success (data) ->
-      $scope.categories = data
+      if $scope.userLoggedIn == false
+        $scope.articles = data
 
   $scope.showMyArticles = ->
     $http.get('/user/articles.json')
       .success (data) ->
         $scope.articles = data
+
 
   $scope.showAllArticles = ->
     $http.get('/articles.json')
@@ -28,9 +35,7 @@ App.controller("ArticleCtrl", ["$scope", "$http", ($scope, $http) ->
     $http.get('/articles.json?category=' + category)
       .success (data) ->
         $scope.articles = data
-])
 
-App.controller("UserCtrl", ["$scope", "$http", "$timeout", ($scope, $http, $timeout) ->
   $http.get('/user/user_all_category.json')
     .success (data) ->
       $scope.allCategories = data
@@ -50,6 +55,7 @@ App.controller("UserCtrl", ["$scope", "$http", "$timeout", ($scope, $http, $time
   $scope.userSubmit = ->
     jsonObj = {"data": $scope.userCategories}
     console.log jsonObj
+
     $http.post('/user/submit.json', jsonObj)
       .success (data) ->
         console.log data
@@ -57,4 +63,10 @@ App.controller("UserCtrl", ["$scope", "$http", "$timeout", ($scope, $http, $time
         $timeout((-> $scope.saved = false), 1000)
       .error (data) ->
         console.log data
+    $('#collapseOne').collapse('hide')
+
+    $http.get('/user/articles.json')
+      .success (data) ->
+        $scope.articles = data
+
 ])

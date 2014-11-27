@@ -1,0 +1,45 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to(raw("<i class='fa fa-newspaper-o fa-lg'></i> READABLE"), root_path, :class => "navbar-brand readable-logo") %>
+    </div>
+
+    <ul class="nav navbar-nav">
+      <li class="active"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">What would you like to read? <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></li>
+    </ul>
+
+    <% if current_user %>
+      <ul class="nav navbar-nav navbar-right welcome-user" id="user-widget">
+        <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+      </ul>
+
+      <p class="navbar-text navbar-right welcome-user">Welcome <strong><%= current_user.name %></strong>!</p>
+
+      <ul class="nav navbar-nav navbar-right welcome-user" id="user-widget">
+        <li><%= image_tag current_user.image %></li>
+      </ul>
+    <% else %>
+      <ul class="nav navbar-nav navbar-right" id="user-widget">
+        <li class="welcome-user"><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
+      </ul>
+    <% end %>
+
+    <form class="navbar-form navbar-right" role="search" _lpchecked="1">
+      <button type="button" class="btn btn-info" ng-click="showMyArticles()" ng-hide="!userLoggedIn">
+        <i class="fa fa-heart fa-lg"></i>
+      </button>
+
+      <button type="button" class="btn btn-primary" ng-click="showAllArticles()">
+        <i class="fa fa-dot-circle-o fa-lg"></i>
+      </button>
+
+      <div class="form-group">
+        <input type="text" ng-model="search" class="form-control" placeholder="Search keywords" autocomplete="off">
+      </div>
+    </form>
+
+
+  </div>
+
+  <%= render partial: 'welcome/collapse' %>
+</nav>

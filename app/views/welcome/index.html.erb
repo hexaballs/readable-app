@@ -1,55 +1,18 @@
 <div class="landing-landing" ng-controller="ArticleCtrl">
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <%= link_to "Readable App", root_path, :class => "navbar-brand" %>
-      </div>
-      <ul class="nav navbar-nav navbar-right" id="user-widget">
-        <li>
-        <% if current_user %>
-          Welcome <strong><%= current_user.name %></strong>!
-        <%= link_to "Sign out", signout_path, id: "sign_out" %>
-        <% else %>
-          <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-        <% end %>
-        </li>
-      </ul>
-    </div>
-  </nav>
 
+  <%= render partial: 'menu'  %>
 
   <div class="landing-container">
     <%= video_tag "background.webm", :autobuffer => true, :autoplay => true, :loop => true, :poster => "background.png", :id => "bgvid" %>
     <div class="video-wrapper "></div>
 
-    <div class="container">
-      <div class="row input-bar">
-        <div class="col-xs-6 col-xs-offset-3">
-          <input type="text" ng-model="search" class="col-xs-6" placeholder="Search">
-          <div class="category-select">
-            <select class="form-control btn btn-success" ng-model="category">
-              <option value>--- All ---</option>
-              <option ng-repeat="category in categories" value="{{category.category_name}}">{{category.category_name}}</option>
-            </select>
-          </div>
-
-          <button type="button" class="btn btn-info btn-md" ng-click="showMyArticles()">
-            <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span> My Categories
-          </button>
-          <button type="button" class="btn btn-primary btn-md" ng-click="showAllArticles()">
-            <span class="glyphicon glyphicon-record" aria-hidden="true"></span> Show All
-          </button>
-        </div>
-      </div>
-    </div>
-
     <div class="landing-articles">
       <div class="container articles-container">
         <div class="row articles-container">
-          <div class="col-xs-4 readable-article" ng-repeat="article in articles | filter: search | filter: { categories:category||undefined }">
+          <div class="col-xs-3 readable-article" ng-repeat="article in articles | filter: search | filter: { categories:category||undefined }">
             <div class="landing-main-img-url"><img ng-src="{{article.main_img_url}}" alt="{{article.title}}"></div>
             <div class="landing-title"><h1><a href="/articles/{{article.id}}">{{article.title}}</a></h1></div>
-            <span class="label label-warning category-pills" ng-repeat="category in article.categories" ng-click="pillFilter(category.category_name)">{{category.category_name}}</span>
+            <span class="label label-primary category-pills" ng-repeat="category in article.categories" ng-click="pillFilter(category.category_name)">{{category.category_name}}</span>
           </div>
         </div>
       </div>
@@ -57,3 +20,4 @@
   </div>
 
 </div>
+
