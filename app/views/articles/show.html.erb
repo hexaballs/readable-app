@@ -1,5 +1,16 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=594370410691941&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
 <% publisher = @article.link_identifier[/[a-z]{1,}\Wcom/] %>
 <div class="<%=publisher[/^[a-z]{1,}/]%> container">
+
 
   <p id="notice"><%= notice %></p>
 
@@ -19,19 +30,18 @@
       <hr class="bottom-hr" />
       <div class="jumbotron main-img-url">
         <div class="img-title">
-          <h1><%= @article.title %></h1>
+          <h1 og:title><%= @article.title %></h1>
           <%= image_tag @article.main_img_url %>
         </div>
       </div>
     </div>
   </div>
 
-
-
   <div class="row content">
     <div class="col-md-3 side-bar">
 
       <div class="social">
+        <div class="fb-share-button" data-href="http://readable-app.herokuapp.com/articles/<%= @article.id %>" data-layout="icon"></div>
         <i class="fa fa-facebook-square fa-3x"></i>
         <i class="fa fa-twitter-square fa-3x"></i>
         <i class="fa fa-pinterest-square fa-3x"></i>
