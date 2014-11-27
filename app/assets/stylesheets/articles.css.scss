@@ -4,6 +4,19 @@ div.inline-image-tools, div.short-url, div.share-buttons.colored, div.count.numb
 }
 
 // article modal styling
+div#facebook {
+  float: left;
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+div#twitter {
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .modal-header{
   .img-title {
     h4 {
@@ -40,7 +53,7 @@ body .modal-lg {
     }
   }
   .content {
-    margin-top: 20px;
+    margin-top: 30px;
   }
 }
 
