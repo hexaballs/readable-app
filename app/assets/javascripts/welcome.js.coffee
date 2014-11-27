@@ -74,5 +74,15 @@ App.controller("ArticleCtrl", ["$scope", "$http", "$timeout", ($scope, $http, $t
     $http.get('/articles/' + articleId + '.json')
       .success (data) ->
         $scope.article = data
-        console.log data
+        $('.bs-article-view').modal('show');
+
+  checkHash = ->
+    if window.location.hash.indexOf('#/articles/') == 0
+      $scope.articleId = window.location.hash.substring(10)
+      $scope.articleView($scope.articleId)
+
+  window.addEventListener("hashchange", checkHash, false)
+
+  if not $('.bs-article-view').is(':visible')
+    checkHash()
 ])
