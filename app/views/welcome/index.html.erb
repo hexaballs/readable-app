@@ -6,16 +6,16 @@
     <%= video_tag "background.webm", :autobuffer => true, :autoplay => true, :loop => true, :poster => "background.png", :id => "bgvid" %>
     <div class="video-wrapper "></div>
 
-    <div class="landing-articles">
-      <div class="container articles-container">
+    <div class="landing-articles container articles-container">
+      <!-- <div class="container articles-container"> -->
         <div class="row articles-container">
-          <div class="col-xs-3 readable-article" ng-repeat="article in articles | filter: search | filter: { categories:category||undefined }">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 readable-article" ng-repeat="article in articles | filter: search | filter: { categories:category||undefined }">
             <div class="landing-main-img-url"><img ng-src="{{article.main_img_url}}" alt="{{article.title}}"></div>
             <div class="landing-title"><h1><a href="#/articles/{{article.id}}">{{article.title}}</a></h1></div>
             <span class="label label-primary category-pills" ng-repeat="category in article.categories" ng-click="pillFilter(category.category_name)">{{category.category_name}}</span>
           </div>
         </div>
-      </div>
+      <!-- </div> -->
     </div>
   </div>
 
