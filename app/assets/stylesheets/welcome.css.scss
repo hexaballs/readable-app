@@ -31,7 +31,7 @@ video#bgvid {
   width: 1273px;
   height: 716px;
   z-index: -100;
-  background: image-url('assets/background.png') no-repeat;
+  background: image-url("background.png") no-repeat;
   // background-size: 100%;
   margin-top: 50px;
 }
@@ -94,7 +94,7 @@ a.readable-logo {
 
 
 .collapse-container {
-  background-image: url(background.png);
+  background-image: image-url("background.png");
   height: 660px;
   overflow-y: scroll;
 
