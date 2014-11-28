@@ -1,12 +1,5 @@
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=594370410691941&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
 
 <% publisher = @article.link_identifier[/[a-z]{1,}\Wcom/] %>
 <div class="<%=publisher[/^[a-z]{1,}/]%> container">
@@ -80,8 +73,7 @@
 
   <br />
 
-  <%= link_to 'Edit', edit_article_path(@article) %> |
-  <%= link_to 'Back', articles_path %>
+
 </div>
 
 

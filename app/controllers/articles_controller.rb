@@ -4,10 +4,10 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.order("pub_date DESC")
     @categories = Category.all
     if params[:category]
-      @articles = Article.joins(:categories).where("categories.category_name" => params[:category])
+      @articles = Article.joins(:categories).where("categories.category_name" => params[:category]).order("pub_date DESC")
     end
   end
 

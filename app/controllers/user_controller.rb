@@ -31,7 +31,7 @@ class UserController < ApplicationController
         user_articles.push(a)
       end
     end
-    @user_articles = user_articles.uniq
+    @user_articles = user_articles.uniq.sort_by {|a| a.pub_date}.reverse!
   end
 
   def is_logged_in
